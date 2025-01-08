@@ -10,6 +10,10 @@ interface CellProps {
   setWinner: React.Dispatch<React.SetStateAction<number>> 
 }
 
+interface WinnerProps {
+  player: number
+}
+
 const trackerboard = [[0,0,0],
                       [0,0,0],
                       [0,0,0]]
@@ -66,6 +70,16 @@ function check_for_win(){
   }
 
   return 0 
+}
+
+
+function Winner (WinnerProps: WinnerProps){
+
+  return (
+    <div>
+      <div> Player {WinnerProps.player} won </div>
+    </div>
+    )
 }
 
 
@@ -129,10 +143,7 @@ function TicTac({})  {
 
 
   if (winner !== 0){
-    return (<div>
-      <div> Player {winner} won </div>
-    </div>
-    )
+    return <Winner player={player}/>
   }
 
 
