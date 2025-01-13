@@ -10,5 +10,5 @@ import TicTac from "./Tic";
 const root = document.getElementById("root")
 ReactDOM.createRoot(root!).render((
     <StrictMode>
-      <TicTac/>
+      <TicTac />
     </StrictMode>));
